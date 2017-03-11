@@ -14,8 +14,7 @@ public class FifteenSquareDisjointMain_1 {
 	public static void main(String[] args) {
 
 		byte[] vals={1,2,3,4,5,6,6,6,7,6,6,6,8,6,6,0};
-		//		byte[] vals={1,2,3,4,5,6,7,8,0};
-
+//				byte[] vals={1,2,3,4,5,6,7,8,0};
     	int[] availableValues={0,1,2,3,4,5,7,8};
 
 		PatternDBSlidingSquareUsingLong startingPos=new PatternDBSlidingSquareUsingLong((byte)4,(byte)4, vals, availableValues);

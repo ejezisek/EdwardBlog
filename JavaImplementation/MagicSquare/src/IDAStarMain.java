@@ -208,15 +208,15 @@ public class IDAStarMain {
 		System.out.println(System.currentTimeMillis());
 		System.out.println(new Date());
 		//byte[]vals={11,4,0,8,9,7,10,6,14,15,2,1,5,12,3,13};
-		byte [] vals={3, 10, 12, 13, 2, 14, 6, 11, 9, 8 , 15,0, 5,7,1,4};
-		//byte [] vals={11,1,5,4,12,6,13,8,10,9,15,2,0,7,14,3};
-		SlidingSquare sq=new SlidingSquare((byte)4,(byte)4);
-		//SlidingSquare sq=new SlidingSquare((byte)4,(byte)4, vals);
+		byte [] vals={15,5,9,2,7,13,4,1,0,3,11,14,8,12,10,6};
+//		3,5,13,11,2,9,8,12,4,,10,6,15,7,1,14
+// byte [] vals={11,1,5,4,12,6,13,8,10,9,15,2,0,7,14,3};
+//		SlidingSquare sq=new SlidingSquare((byte)4,(byte)4);
+		SlidingSquare sq=new SlidingSquare((byte)4,(byte)4, vals);
 		//SlidingSquare sq=new SlidingSquare((byte)4,(byte)4);
 		SlidingSquareNode b=new SlidingSquareNode(sq);
 		System.out.println(b);
 		System.out.println(b.getCommaDelimited());
-
 		if(!b.isSolvable())
 		{
 			System.out.println("NOT SOLVABLE");
@@ -224,7 +224,7 @@ public class IDAStarMain {
 		}
 		Common.Heuristic<SlidingSquareNode> h=new ManhattanDistanceHeuristic();
 		//System.out.println(h.getHeuristic(b));
-		SlidingSquareNode[] res=IDAStarNew.IDA_Star(b, HeuristicFactory.PATTERNDATABASEWITHMANHATTANDISTANCEWITHLINEARCONFLICT.get(), new Common.Goal<SlidingSquareNode>() {
+		SlidingSquareNode[] res=IDAStarNew.IDA_Star(b, HeuristicFactory.MANHATTANDISTANCEWITHLINEARCONFLICT.get(), new Common.Goal<SlidingSquareNode>() {
 			@Override
 			public boolean isGoal(SlidingSquareNode n) {
 				// TODO Auto-generated method stub
